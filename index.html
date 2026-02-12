@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Smita ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- 💜 Animated Background -->
+<div class="bgAnimated"></div>
+
+<!-- 🔐 PASSWORD SCREEN -->
+<div id="passwordScreen" class="screen active glass">
+    <h2>🔐 Our Secret Love</h2>
+
+    <input type="password" id="passwordInput" placeholder="Enter our password">
+
+    <button id="unlockBtn">Unlock ❤️</button>
+
+    <p id="error"></p>
+</div>
+
+<!-- 🎬 INTRO SCREEN -->
+<div id="introScreen" class="screen glass">
+    <h1 class="glow">Ashish ❤️ Smita</h1>
+    <p>Hey Smita 💖</p>
+</div>
+
+<!-- 💞 MAIN CONTENT -->
+<div id="mainContent" class="screen">
+    <div class="glass card">
+
+        <h1>Happy Birthday Smita 🎂💖</h1>
+
+        <p id="message" class="typingCursor"></p>
+
+        <!-- 📸 PHOTO AREA -->
+        <div class="photoWrapper">
+            <div id="photoBg" class="photoBg"></div>
+            <img id="slide" src="photos/smita1.jpeg" alt="Smita photo">
+        </div>
+
+        <button onclick="openLetter()">💌 Read My Letter</button>
+        <button onclick="openProposal()">💍 Promise</button>
+        <button onclick="openSurprise()">🎁 Final Surprise</button>
+
+    </div>
+</div>
+
+<!-- 💌 LOVE LETTER PAGE -->
+<div id="letterPage" class="screen">
+    <div class="glass card">
+        <h2>💌 For You Smita</h2>
+        <p id="letterText"></p>
+
+        <button onclick="backToMain()">⬅ Back</button>
+    </div>
+</div>
+
+<!-- 💍 PROPOSAL PAGE -->
+<div id="proposalPage" class="screen">
+    <div class="glass card">
+        <h2>Will you be mine forever? 💍</h2>
+
+        <button onclick="yesForever()">YES FOREVER ❤️</button>
+        <button onclick="backToMain()">⬅ Back</button>
+    </div>
+</div>
+
+<!-- 🎆 FINAL SURPRISE -->
+<div id="surprisePage" class="screen">
+    <canvas id="fireworks"></canvas>
+
+    <div class="glass card">
+        <h1 class="glow">I LOVE YOU SMITA ❤️ FOREVER</h1>
+        <p>Happy Birthday My Love 🎂💖</p>
+    </div>
+</div>
+
+<!-- 💖 Floating hearts container -->
+<div id="hearts"></div>
+
+<!-- 🌙 Theme Toggle -->
+<button id="themeToggle">🌙</button>
+
+<!-- 🎵 Background Music -->
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ⚙️ Script -->
+<script src="script.js"></script>
+
+</body>
+</html>

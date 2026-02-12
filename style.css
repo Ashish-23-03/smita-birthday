@@ -1,0 +1,152 @@
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    color:white;
+    overflow-x:hidden;   /* allow vertical scroll */
+}
+
+/* 💜 Animated Background */
+.bgAnimated{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:linear-gradient(270deg,#ff6ec4,#7873f5,#ff6ec4,#ff9a9e);
+    background-size:600% 600%;
+    animation:gradientMove 12s ease infinite;
+    z-index:-1;
+}
+
+@keyframes gradientMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* 📱 Screen Layout FIXED FOR MOBILE */
+.screen{
+    display:none;
+    min-height:100vh;
+    padding:40px 15px;
+    justify-content:flex-start;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+.active{display:flex;}
+
+/* glass UI */
+.glass{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    border-radius:20px;
+    padding:25px;
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 0 30px rgba(255,255,255,0.15);
+}
+
+/* card width */
+.card{
+    width:100%;
+    max-width:380px;
+}
+
+/* buttons */
+button{
+    margin-top:12px;
+    padding:12px 22px;
+    border:none;
+    border-radius:25px;
+    background:linear-gradient(45deg,#ff6ec4,#7873f5);
+    color:white;
+    cursor:pointer;
+    font-size:15px;
+}
+
+/* 📸 PHOTO WRAPPER (ORIGINAL RATIO FIXED) */
+.photoWrapper{
+    position:relative;
+    width:100%;
+    max-width:380px;
+    margin:20px auto;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+/* blurred background */
+.photoBg{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    filter:blur(25px) brightness(0.5);
+    transform:scale(1.2);
+    z-index:0;
+}
+
+/* main image (original aspect ratio) */
+.photoWrapper img{
+    position:relative;
+    width:100%;
+    height:auto;
+    object-fit:contain;
+    border-radius:20px;
+    z-index:1;
+    max-height:75vh;
+}
+
+/* typing cursor */
+.typingCursor::after{
+    content:"|";
+    animation:blink 1s infinite;
+}
+@keyframes blink{50%{opacity:0;}}
+
+/* hearts */
+.heart{
+    position:fixed;
+    width:20px;
+    height:20px;
+    background:pink;
+    transform:rotate(45deg);
+    animation:floatHeart var(--dur,7s) linear forwards;
+}
+.heart::before,.heart::after{
+    content:"";
+    position:absolute;
+    width:20px;
+    height:20px;
+    background:pink;
+    border-radius:50%;
+}
+.heart::before{top:-10px;}
+.heart::after{left:-10px;}
+
+@keyframes floatHeart{
+    0%{transform:translateY(0) scale(0.7) rotate(45deg);opacity:0;}
+    10%{opacity:1;}
+    100%{transform:translateY(-110vh) scale(1.2) rotate(45deg);opacity:0;}
+}
+
+/* fireworks */
+#fireworks{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+}
+
+/* 📱 MOBILE OPTIMIZATION */
+@media(max-width:600px){
+    h1{
+        font-size:22px;
+    }
+
+    .photoWrapper img{
+        max-height:60vh;
+    }
+
+    button{
+        width:100%;
+    }
+}
